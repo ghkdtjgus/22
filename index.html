@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>영화 추천 홈페이지</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* 전체 페이지 스타일 */
+      body {
+        font-family: 'Helvetica Neue', sans-serif;
+        margin: 0;
+      }
+
+      header, main, footer {
+        padding: 20px;
+      }
+
+      header {
+        background-color: #512DA8;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .logo {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-item {
+        display: block;
+        margin: 5px 0;
+        padding: 5px;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f2f2f2;
+      }
+
+      footer {
+        background-color: #eee;
+        margin-top: 80px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      /* 영화 카드 스타일 */
+      .movie-card {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .movie-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .movie-info {
+        padding: 10px;
+      }
+
+      .movie-info h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .movie-info p {
+        font-size: 1rem;
+        margin-bottom: 3px;
+      }
+
+      /* 그리드 레이아웃 */
+      .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      /* 추가된 스타일 */
+      .btn {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #222;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 
